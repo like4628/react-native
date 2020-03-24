@@ -30,9 +30,9 @@ export default function App() {
 
   const correct = () => {
     if (validCode.length < 10) {
-      return <Text>輸入錯誤</Text>
+      return <Text style={styles.wrong}>輸入錯誤</Text>
     } else
-      return <Text>輸入正確</Text>
+      return <Text style={styles.correct}>輸入正確</Text>
 
   }
   //作業練習結束
@@ -76,9 +76,15 @@ export default function App() {
         style={{ height: 30, width: 200, backgroundColor: '333', color: '333', borderWidth: 3, borderRadius: 5, textAlign: "center", marginTop: 20 }}
         onChangeText={(text) => setValidCode(text)}
         value={validCode}
+        //指定鍵盤字數
         maxLength={10}
-        keyboardType='number-pad'
-        secureTextEntry={true}
+        //指定鍵盤型態
+        keyboardType='phone-pad'
+        // 鍵盤打完收回
+        returnKeyType='done'
+        //讓密碼不顯示
+        // secureTextEntry={true}
+        //進入畫面自動進入輸入畫面
         autoFocus={true}
       >
       </TextInput>
@@ -125,6 +131,12 @@ const styles = StyleSheet.create({
     color: '#333',
     marginTop: 30,
     fontSize: 30
+  },
+  wrong: {
+    color: 'red'
+  },
+  correct: {
+    color: 'green'
   }
   //作業練習結束
 
