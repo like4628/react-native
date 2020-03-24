@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 export default function App() {
 
-
+  //第一階段上課練習 開始
   const [food, setFood] = useState('candy')
 
   const [count, setCount] = useState(0)
@@ -22,7 +22,10 @@ export default function App() {
   const substract = () => {
     setCount(count - 1)
   }
+  //第一階段上課練習結束
 
+
+  //作業練習開始
   const [validCode, setValidCode] = useState('')
 
   const correct = () => {
@@ -32,16 +35,13 @@ export default function App() {
       return <Text>輸入正確</Text>
 
   }
-
-  const wrong = () => {
-
-  }
+  //作業練習結束
 
 
   return (
     <View style={styles.container}>
 
-      {/* 第一段練習 */}
+      {/* 第一段練習開始 */}
 
       {/* <Text style={styles.title}>Hello~</Text>
       <Text style={styles.food}>{food}</Text>
@@ -69,7 +69,7 @@ export default function App() {
       {/* 第一段練習結束 */}
 
 
-      {/* TextInput練習 */}
+      {/* 作業練習開始 */}
 
       <Text>電話號碼檢查</Text>
       <TextInput
@@ -86,13 +86,7 @@ export default function App() {
 
       <Text style={styles.message}>{correct()}</Text>
 
-
-
-
-
-
-
-
+      {/* 作業練習結束 */}
 
 
     </View >
@@ -107,7 +101,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  // 第一階段上課練習
+  // 第一階段上課練習開始
   title: {
     color: '#fff',
     fontSize: 30,
@@ -122,7 +116,7 @@ const styles = StyleSheet.create({
   },
   // 第一階段上課練習結束
 
-  //課後作業
+  //作業練習開始
   userPhone: {
     fontSize: 20,
     marginTop: 20
@@ -132,5 +126,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
     fontSize: 30
   }
+  //作業練習結束
 
 });
