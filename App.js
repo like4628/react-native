@@ -1,99 +1,86 @@
 import React, { useState } from 'react';
 
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, TouchableOpacity, TouchableHighlight, Image } from 'react-native';
 
 export default function App() {
 
-  //第一階段上課練習 開始
-  const [food, setFood] = useState('candy')
+  //上課練習 開始
+  const pressHighlight = () => {
+    console.log('按到highlight按鈕囉～')
+  }
+  const pressOpacity = () => {
+    console.log('按到opacity按鈕囉～')
+  }
+  //上課練習 結束
+
+  //作業練習 開始
 
   const [count, setCount] = useState(0)
 
-  const changeFood = () => {
-    setFood('rice')
-  }
-  const ChangeMeat = () => {
-    setFood('meat')
-  }
-
-  const plus = () => {
+  //上數
+  const countUp = () => {
     setCount(count + 1)
   }
-  const substract = () => {
+  //下數
+  const countDown = () => {
     setCount(count - 1)
   }
-  //第一階段上課練習結束
-
-
-  //作業練習開始
-  const [validCode, setValidCode] = useState('')
-
-  const correct = () => {
-    if (validCode.length < 10) {
-      return <Text style={styles.wrong}>輸入錯誤</Text>
-    } else
-      return <Text style={styles.correct}>輸入正確</Text>
-
+  //重設
+  const reset = () => {
+    setCount(0)
   }
+
   //作業練習結束
 
 
   return (
     <View style={styles.container}>
+      {/* 上課練習開始 */}
 
-      {/* 第一段練習開始 */}
+      {/* <Text>底下是兩種按鈕</Text>
+      <TouchableOpacity style={styles.button} onPress={() => { pressOpacity() }}>
+        <Text style={styles.text}>按鈕反白</Text>
+      </TouchableOpacity>
 
-      {/* <Text style={styles.title}>Hello~</Text>
-      <Text style={styles.food}>{food}</Text>
-      <Button
-        title='Change Food'
-        onPress={() => changeFood()}>
+      <TouchableHighlight style={styles.button} onPress={() => { pressHighlight() }}>
+        <Text style={styles.text}>按鈕反黑</Text>
+      </TouchableHighlight>
 
-      </Button>
-      <Button
-        title='Change meat'
-        onPress={() => ChangeMeat()}>
-      </Button>
+      <TouchableOpacity style={styles.button} onPress={() => { pressOpacity() }}>
+        <Image style={{ width: 20, height: 20 }}
+          //本地匯入圖片方式
+          //source={require('./src/pic/lock-1320568686583880933.png')}></Image>
+          //網址匯入圖片方式 
+          source={{ uri: 'https://icons-for-free.com/iconfiles/png/512/lock-1320568686583880933.png' }}></Image>
+      </TouchableOpacity> */}
 
-      <Text style={styles.number}>目前是:{count}</Text>
-      <Button
-        title='Press to add 1'
-        color='#9900FF'
-        onPress={() => plus()}>
-      </Button>
-      <Button
-        title='press to substract 1'
-        color='red'
-        onPress={() => substract()}></Button> */}
+      {/* 上課練習結束 */}
 
-      {/* 第一段練習結束 */}
+      {/* 作業開始 */}
+      <Text style={{ fontSize: 40 }}>目前數字是：{count}</Text>
 
+      {/* 上數按鈕 */}
+      <TouchableOpacity
+        style={[styles.button, styles.up]}
+        onPress={() => countUp()}>
+        <Text style={styles.text}>Add</Text>
+      </TouchableOpacity>
 
-      {/* 作業練習開始 */}
+      {/* 下數按鈕 */}
+      <TouchableOpacity
+        style={[styles.button, styles.down]}
+        onPress={() => countDown()}>
+        <Text style={styles.text}>Substract</Text>
+      </TouchableOpacity>
 
-      <Text>電話號碼檢查</Text>
-      <TextInput
-        style={{ height: 30, width: 200, backgroundColor: '333', color: '333', borderWidth: 3, borderRadius: 5, textAlign: "center", marginTop: 20 }}
-        onChangeText={(text) => setValidCode(text)}
-        value={validCode}
-        //指定鍵盤字數
-        maxLength={10}
-        //指定鍵盤型態
-        keyboardType='phone-pad'
-        // 鍵盤打完收回
-        returnKeyType='done'
-        //讓密碼不顯示
-        // secureTextEntry={true}
-        //進入畫面自動進入輸入畫面
-        autoFocus={true}
-      >
-      </TextInput>
-      <Text style={styles.userPhone}>輸入的電話號碼是： {validCode}</Text>
+      {/* 重設按鈕 */}
+      <TouchableOpacity
+        style={[styles.button, styles.reset]}
+        onPress={() => reset()}>
+        <Text style={styles.text}>Reset</Text>
+      </TouchableOpacity>
 
-      <Text style={styles.message}>{correct()}</Text>
-
-      {/* 作業練習結束 */}
-
+      {/* 作業結束 */}
 
     </View >
   );
@@ -106,38 +93,40 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-
-  // 第一階段上課練習開始
-  title: {
-    color: '#fff',
-    fontSize: 30,
-  },
-  food: {
-    color: '#FF00FF',
-    fontSize: 40
-  },
-  number: {
-    color: '#FF8800',
-    fontSize: 60
-  },
-  // 第一階段上課練習結束
-
-  //作業練習開始
-  userPhone: {
-    fontSize: 20,
+  // 上課練習 開始
+  button: {
+    width: 100,
+    height: 40,
+    borderRadius: 10,
     marginTop: 20
   },
-  message: {
-    color: '#333',
-    marginTop: 30,
-    fontSize: 30
+  text: {
+    textAlign: "center",
+    color: '#fff',
+    fontSize: 20,
+    lineHeight: 40
   },
-  wrong: {
-    color: 'red'
+  // 上課練習 結束
+
+  //作業練習開始
+  up: {
+    backgroundColor: "#f273bf"
   },
-  correct: {
-    color: 'green'
+  down: {
+    backgroundColor: '#00aeef',
+  },
+  reset: {
+    backgroundColor: '#00dc00',
   }
+
+
+
+
+
   //作業練習結束
+
+
+
+
 
 });
