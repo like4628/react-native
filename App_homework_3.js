@@ -7,9 +7,15 @@ export default function App() {
   //上課練習 開始
 
   const [validCode, setValidCode] = useState('')
+
+  //上課練習 結束
+
+
+
+  //作業練習 開始
+
   const [result, setResult] = useState()
   const [icon, setIcon] = useState()
-
 
   //方法一
   const getNumber = () => {
@@ -27,13 +33,13 @@ export default function App() {
     }
   }
 
-  //上課練習 結束
-
-  //作業練習 開始
-
-
-
   //作業練習結束
+
+
+
+
+
+
 
 
   return (
@@ -90,14 +96,6 @@ export default function App() {
       {result}
       {icon}
 
-
-
-
-      {/* 上課練習結束 */}
-
-
-
-
       {/* 作業結束 */}
 
     </View >
@@ -111,14 +109,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  // 上課練習 開始
+
   button: {
     width: 100,
     height: 40,
     borderRadius: 5,
     marginTop: 20,
     backgroundColor: '#333',
-
   },
   text: {
     textAlign: "center",
@@ -126,7 +123,6 @@ const styles = StyleSheet.create({
     lineHeight: 40,
     marginTop: 20,
     marginBottom: 20
-
   },
   input: {
     backgroundColor: '#fff',
@@ -136,11 +132,7 @@ const styles = StyleSheet.create({
     height: 50,
     textAlign: "center",
     fontSize: 30
-
   },
-  // 上課練習 結束
-
-  //作業練習開始
   up: {
     // backgroundColor: "#f273bf",
     color: "#e60213",
@@ -153,16 +145,4 @@ const styles = StyleSheet.create({
     // backgroundColor: '#00dc00',
     color: "#00dc00"
   },
-
-
-
-
-
-
-  //作業練習結束
-
-
-
-
-
 });
