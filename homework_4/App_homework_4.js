@@ -35,27 +35,27 @@ export default function App() {
 
       ></MyButton>
       <MyButton
-        myTitle='2'
+        myTitle='3'
         myOnPress={() => printMessage()}
         backgroundColor={'pink'} color={'#fff'}
 
       ></MyButton>
       <MyButton
-        myTitle='2'
+        myTitle='A'
         myOnPress={() => printMessage()}
         backgroundColor={'orange'} color={'#fff'}
 
       ></MyButton>
       <MyButton
-        myTitle='2'
+        myTitle='B'
         myOnPress={() => printMessage()}
         backgroundColor={'green'} color={'#fff'}
 
       ></MyButton>
       <MyButton
-        myTitle='2'
+        myTitle='C'
         myOnPress={() => printMessage()}
-        backgroundColor={'pink'} color={'#fff'}
+        backgroundColor={'brown'} color={'#fff'}
 
       ></MyButton>
 
