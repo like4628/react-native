@@ -10,6 +10,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import Dessert from './src/screen/Dessert';
 import DessertScreen from './src/screen/DessertScreen';
+
 import FoodDetailScreen from './src/screen/FoodDetailScreen'
 import Food from './src/screen/Food'
 
@@ -48,7 +49,7 @@ function MyFoodStack() {
       initialRouteName='Food'
       screenOptions={{
         headerStyle: { backgroundColor: 'black' },
-        headerBackTitle: '返回2',
+        headerBackTitle: '返回',
         headerTintColor: '#fff'
       }}
     >
@@ -75,7 +76,7 @@ export default function App() {
 
     <NavigationContainer>
 
-      {/* 上方導覽列換頁 */}
+      {/* 上方導覽列換頁開始 */}
 
       {/* <Stack.Navigator
         //進到畫面初始頁面
@@ -92,8 +93,10 @@ export default function App() {
         <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
       </Stack.Navigator> */}
 
+      {/* 上方導覽列換頁結束 */}
 
-      {/* 下方導覽列換頁 */}
+
+      {/* 下方導覽列換頁開始 */}
 
       <Tab.Navigator
         initialRouteName='Dessert'
@@ -109,7 +112,7 @@ export default function App() {
               iconImg = focused ? 'https://cdn0.iconfinder.com/data/icons/sweet-and-candies-3/64/Wedding_cake-cake-birthday-bakery-candles-512.png' : 'https://cdn0.iconfinder.com/data/icons/sweet-and-candies-3/64/Wedding_cake-cake-birthday-bakery-candles-512.png'
             } else if (route.name == 'Food') {
               // iconName = focused ? 'ios-options' : 'ios-list'
-              iconImg = focused ? 'https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/7365774771579770860-256.png' : 'https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/7365774771579770860-256.png'
+              iconImg = focused ? 'https://cdn0.handsonconnect.org/0101/images/breakfast%20orange%20plate%20icon.png' : 'https://cdn0.handsonconnect.org/0101/images/breakfast%20orange%20plate%20icon.png'
             }
             // return <Ionicons name={iconName} size={25} color={color}></Ionicons>
             return <Image style={{ width: 30, height: 30 }} source={{ uri: iconImg }}></Image>
@@ -117,12 +120,13 @@ export default function App() {
           }
         })}
         tabBarOptions={{
-          activeTintColor: 'green',
+          activeTintColor: '#6F00D2',
           inactiveTintColor: 'gray'
         }}>
         <Tab.Screen name="Dessert" component={MyDessertStack} />
         <Tab.Screen name="Food" component={MyFoodStack} />
       </Tab.Navigator >
+      {/* 下方導覽列換頁結束 */}
     </NavigationContainer >
 
   );
